@@ -33,6 +33,7 @@ shap>=0.42.0
 
 # Database (Naya Add Kiya Hai)
 pymongo[srv]>=4.5.0
+motor>=3.3.0
 
 # Authentication (Naya Add Kiya Hai)
 passlib[bcrypt]>=1.7.4
