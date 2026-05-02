@@ -1,3 +1,6 @@
+# PyTorch CPU-only URL (RENDER KE LIYE BOHOT ZAROORI HAI)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 # Core ML and NLP Libraries
 torch>=2.0.0
 transformers>=4.30.0
@@ -27,6 +30,12 @@ imbalanced-learn>=0.11.0
 # Model Interpretability
 lime>=0.2.0
 shap>=0.42.0
+
+# Database (Naya Add Kiya Hai)
+pymongo[srv]>=4.5.0
+
+# Authentication (Naya Add Kiya Hai)
+passlib[bcrypt]>=1.7.4
 
 # Utilities
 python-dotenv>=1.0.0
