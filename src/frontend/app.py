@@ -23,7 +23,7 @@ st.set_page_config(
 # API configuration
 API_URL = st.sidebar.text_input(
     "API URL",
-    value="http://localhost:8000",
+    value="https://ai-mental-health-companion-n9xk.onrender.com",
     help="URL of the FastAPI backend",
 )
 
@@ -71,7 +71,7 @@ def api_signup(email: str, password: str, full_name: Optional[str] = None) -> Di
         resp = requests.post(
             f"{API_URL}/api/auth/signup",
             json={"email": email, "password": password, "full_name": full_name},
-            timeout=8,
+            timeout=60,
         )
         if resp.status_code >= 400:
             return {"ok": False, "error": resp.json().get("detail", "Signup failed")}
@@ -85,7 +85,7 @@ def api_login(email: str, password: str) -> Dict[str, Any]:
         resp = requests.post(
             f"{API_URL}/api/auth/login",
             json={"email": email, "password": password},
-            timeout=8,
+            timeout=60,
         )
         if resp.status_code >= 400:
             # FastAPI uses `detail` for errors
@@ -105,7 +105,7 @@ def api_me() -> Dict[str, Any]:
         resp = requests.get(
             f"{API_URL}/api/auth/me",
             headers=_auth_headers(),
-            timeout=8,
+            timeout=60,
         )
         if resp.status_code >= 400:
             return {"ok": False, "error": "Not authenticated"}
