@@ -1,5 +1,6 @@
 import os
 from typing import Optional
+import certifi
 
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 
@@ -18,7 +19,7 @@ def get_client() -> AsyncIOMotorClient:
     """
     global _client
     if _client is None:
-        _client = AsyncIOMotorClient(MONGODB_URI)
+        _client = AsyncIOMotorClient(MONGODB_URI, tlsCAFile=certifi.where())
     return _client
 
 

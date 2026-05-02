@@ -45,6 +45,7 @@ pyyaml>=6.0
 requests>=2.31.0
 bcrypt>=4.1.0
 python-jose>=3.3.0
+certifi>=2023.7.22
 
 # Testing and Quality
 pytest>=7.4.0
